@@ -3,9 +3,9 @@
 Grab a lot of websites you like, that has some HREF (links) in their's HTML code
 
 list those websites in the file "inputsites.txt", separated by a jump of line like this:
-https://www.wikipedia.org/
-https://www.google.com
-https://www.example.com/
+https://www.wikipedia.org/\n
+https://www.google.com\n
+https://www.example.com/\n
 the "/" at the end doesnt matter
 
 execute generator.py from its folder
