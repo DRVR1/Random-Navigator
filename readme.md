@@ -22,8 +22,11 @@ Beacuse its cool to watch how your computer search random sites like there was a
 ### config section of visitor.py:
 
 you can change the used browser
+
 driver = webdriver.Chrome()
+
 driver = webdriver.Edge()
+
 driver = webdriver.Firefox()
 
 Change the ammount of time the bot stays in a random time in seconds
