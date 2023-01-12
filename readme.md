@@ -14,13 +14,13 @@ there will be generated a file called "randomsites.txt" that has a list of all t
 
 execute visitor.py
 
-what is visitor?
+##what is visitor?
 visitor is a bot, that uses your browser to search all those sites one by one, before visiting another site.
 
-Why would you need this?
+##Why would you need this?
 -Beacuse its cool to watch how your computer search random sites like there was a ghost
 
-what config is avaliable?
+##what config is avaliable?
 
 config section of visitor.py:
 
