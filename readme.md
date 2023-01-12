@@ -15,6 +15,7 @@ navigator is a bot, that uses your browser to search all those sites one by one,
 
 ## Why would you need this?
 Beacuse its cool to watch how your computer search random sites like there was a ghost
+(to simulate browsing activity like a human, you could modify all the "randomsites.txt" list) and increase the time it stays in the site.
 
 ## what config is avaliable?
 
