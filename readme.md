@@ -10,8 +10,8 @@
 
 5) execute visitor.py
 
-## what is visitor?
-visitor is a bot, that uses your browser to search all those sites one by one, before visiting another site.
+## what is navigator?
+navigator is a bot, that uses your browser to search all those sites one by one, before visiting another site.
 
 ## Why would you need this?
 -Beacuse its cool to watch how your computer search random sites like there was a ghost
