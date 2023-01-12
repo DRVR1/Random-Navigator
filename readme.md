@@ -23,7 +23,7 @@ To simulate browsing activity like a human, you could modify all the "randomsite
 
 ### config section of visitor.py:
 
-you can change the used browser
+#### you can change the used browser
 
 driver = webdriver.Chrome()
 
@@ -31,7 +31,7 @@ driver = webdriver.Edge()
 
 driver = webdriver.Firefox()
 
-Change the ammount of time the bot stays in a random time in seconds
+#### Change the ammount of time the bot stays in a random time in seconds
 
 # Requirements: 
 
