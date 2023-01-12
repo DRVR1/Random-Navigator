@@ -1,6 +1,6 @@
 # USAGE
 
-1) Grab a lot of websites you like, that has some HREF (links) in their's HTML code
+1) Grab a lot of websites you would like to "visit", that has some HREF (links) in their's HTML code
 
 2) list those websites in the file "inputsites.txt" (the "/" at the end of the URL doesnt matter)
 
