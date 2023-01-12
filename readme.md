@@ -19,7 +19,7 @@ Beacuse its cool to watch how your computer search random sites like there was a
 
 ## what config is avaliable?
 
-config section of visitor.py:
+### config section of visitor.py:
 
 you can change the used browser
 driver = webdriver.Chrome()
