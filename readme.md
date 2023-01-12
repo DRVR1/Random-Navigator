@@ -26,3 +26,9 @@ driver = webdriver.Edge()
 driver = webdriver.Firefox()
 
 Change the ammount of time the bot stays in a random time in seconds
+
+# Requirements: 
+bs4==0.0.1
+requests==2.28.2
+selenium==4.7.2
+
