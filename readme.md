@@ -1,3 +1,5 @@
+## important updates on its way !
+
 # USAGE
 
 1) Grab a lot of websites you would like to "visit", that has some HREF (links) in their's HTML code
