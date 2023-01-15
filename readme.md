@@ -21,7 +21,7 @@ navigator is a bot, that uses your browser to search all those sites one by one,
 
 To simulate browsing activity, in random or not random websites.
 
-When using a vpn, this adds a layer of privacy, getting difficult to hackers from using an end-to-end confirmation attack. Be wise selecting your websites.
+When using a vpn, this adds a layer of privacy, getting difficult to hackers from using an end-to-end confirmation attack. Remember that you will need to obfuscate package sizes.
 
 ## what config is avaliable?
 
@@ -37,10 +37,6 @@ breaktime_ = how much to wait before re-open the browser
 
 startups = times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
 
-randomUseragent = False #use another user agent?
-
-sitesfile = 'randomsites.txt' #list of websites (you can use generator.py to generate a list of random links inside a webpage or wepages you choose)
-
 
 # Requirements: 
 
@@ -50,11 +46,6 @@ requests==2.28.2
 
 selenium==4.7.2
 
+fake-useragent==1.1.1
 
-## fixed: 
 
-Now hours are displayed in the correct format.
-
-## known issues: 
-
-open browser time limit should interrupt website time limit 
