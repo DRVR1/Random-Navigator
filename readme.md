@@ -55,3 +55,5 @@ requests==2.28.2
 
 selenium==4.7.2
 
+fake-useragent==1.1.1
+
