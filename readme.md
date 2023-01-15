@@ -1,7 +1,7 @@
 
 ## fixing: 
 
-hours are displayed as seconds
+hours are displayed in seconds
 
 open browser time limit should interrupt website time limit 
 
