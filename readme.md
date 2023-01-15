@@ -1,9 +1,4 @@
-
-## fixing: 
-
-hours are displayed as seconds
-
-open browser time limit should interrupt website time limit 
+## This is an Alpha version. Currently under testing.
 
 # USAGE
 
@@ -55,3 +50,11 @@ requests==2.28.2
 
 selenium==4.7.2
 
+
+## fixed: 
+
+Now hours are displayed in the correct format.
+
+## known issues: 
+
+open browser time limit should interrupt website time limit 
