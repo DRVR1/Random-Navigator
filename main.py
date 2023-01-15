@@ -18,7 +18,7 @@ totaltimeT = (35,35) #time the browser is open before close
 breaktimeT = (10,10) #how much to wait before re-open the browser
 startups = 3 #times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
 wbrowser = 3 # 1-chrome 2-firefox 3-edge
-fontcolor = '1'  #console font color (windows only)
+fontcolor = '7'  #console font color (windows only)
 '''
 windows OS options:
     0 = Black       8 = Gray
