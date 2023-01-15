@@ -1,4 +1,10 @@
 
+##fixing: 
+
+hours are displayed as seconds
+
+open browser time limit should interrupt website time limit 
+
 # USAGE
 
 1) Grab a lot of websites you would like to "visit", that has some HREF (links) in their's HTML code
