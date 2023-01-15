@@ -145,24 +145,17 @@ class Browser:
         return self.driver
 
     def search(self,sites:list,controller:Controller):
-        #currentTime = timer()
-        #elapsedTime = currentTime - controller.startTime
-        #print("current browsing time: " + str(printTime(elapsedTime)) + ' '+controller.timeUnitString)
         index = random.randint(0,len(sites)-1)
         site = sites[index]
         self.searchedsites += 1
         if(controller.startups != 0):
             print("startup: " + str(self.currentstartup) + '/' + str(controller.startups))
-            #if(elapsedTime > controller.totaltime):
-                #return True #breaks the loop
         print('visited sites in this startup: ' + str(self.searchedsites))
         print("loading: "+site)
         blockPrint()
         self.driver.get(site) #TODO disable print
         enablePrint()
         print(str(datetime.datetime.now()) + " - loaded, staying: " +str(printTime(controller.staytime)) + ' '+controller.timeUnitString)
-        
-        #time.sleep(controller.staytime)
         if self.betterSleep(controller.staytime,controller):
             return True #if betterSleep is interrupted by the max browsing time, returns true. otherwise returns false
         else:
@@ -177,17 +170,11 @@ class Browser:
         counter = 0
         while(counter < seconds):
             counter += 1
-            #TODO DEBUG
             currentTime = timer()
             elapsedTime = currentTime - controller.startTime
             print('Website time: ' + str(printTime(counter)) + ' '+controller.timeUnitString + ' --- Open browser time: ' + str(printTime(elapsedTime)) + ' '+controller.timeUnitString, end='\r')
-            #sys.stdout.flush()
-
-            #print( , end='\r')
             if(elapsedTime > controller.totaltime):
-                return True #breaks the loop
-            #print("Startup browsing time: " + str(printTime(elapsedTime)) + ' '+controller.timeUnitString)
-            #check things here
+                return True 
             time.sleep(1)
         return False
 
