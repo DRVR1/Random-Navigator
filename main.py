@@ -7,6 +7,7 @@ import random
 import fake_useragent
 import datetime
 import os
+import sys
 
 '''
 author: ianvid
@@ -35,6 +36,12 @@ if os.name == 'nt': #if OS is windows, change console font color
 
 #other config
 sitesfile = 'randomsites.txt' #list of websites (you can use generator.py to generate a list of random links inside a webpage or wepages you choose)
+
+
+def blockPrint():
+    sys.stdout = open(os.devnull, 'w')
+def enablePrint():
+    sys.stdout = sys.__stdout__
 
 
 class Controller:
@@ -133,7 +140,9 @@ class Browser:
                 return True #breaks the loop
         print('total visited sites: ' + str(self.searchedsites))
         print("loading: "+site)
-        self.driver.get(site)
+        blockPrint()
+        self.driver.get(site) #TODO disable print
+        enablePrint()
         print(str(datetime.datetime.now()) + " - loaded, staying: " +str(controller.staytime) + ' '+controller.timeUnitString)
         time.sleep(controller.staytime)
 
