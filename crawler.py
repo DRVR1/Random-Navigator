@@ -4,7 +4,6 @@ import requests
 #Grab a lot of websites you like, that has some HREF (links) in their's HTML code
 
 
-
 class crawler():
     def scrape(self,site):
         list = []
@@ -13,9 +12,9 @@ class crawler():
         ev = s.find_all('a')
         for x in ev:
             href = x.attrs['href']
-            if href.startswith("/"): #href="//site.com/#some-id" would go to site.com and scroll to the id on that page. 
-                continue
-            if href.startswith("#"): #href="#some-id" would scroll to an element on the current page such as <div id="some-id">. 
+            #href="#some-id" would scroll to an element on the current page such as <div id="some-id">. 
+            #href="//site.com/#some-id" would go to site.com and scroll to the id on that page. 
+            if (href.startswith("/") or href.startswith("#")): #invalid link
                 continue
             list.append(href)
         return list

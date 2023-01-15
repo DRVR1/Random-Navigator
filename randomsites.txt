@@ -1,13 +1,4 @@
 https://www.wikimedia.org
-https://en.wikipedia.org/wiki/HTTP_404
-https://www.google.com.ar/imghp?hl=es-419&tab=wi
-https://maps.google.com.ar/maps?hl=es-419&tab=wl
-https://play.google.com/?hl=es-419&tab=w8
-https://www.youtube.com/?tab=w1
-https://news.google.com/?tab=wn
-https://mail.google.com/mail/?tab=wm
-https://drive.google.com/?tab=wo
-https://www.google.com.ar/intl/es-419/about/products?tab=wh
-http://www.google.com.ar/history/optout?hl=es-419
-https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/&ec=GAZAAQ
-https://www.google.com/setprefdomain?prefdom=AR&prev=https://www.google.com.ar/&sig=K_iVoU0-1JEnzyJrCOwMGRyWV1EgU%3D
+https://en.wikipedia.org/
+https://www.google.com.ar/
+https://maps.google.com.ar/
