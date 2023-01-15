@@ -20,6 +20,8 @@ navigator is a bot, that uses your browser to search all those sites one by one,
 
 To simulate browsing activity, in random or not random websites.
 
+When using a vpn, this adds a layer of privacy, getting difficult to hackers from using an end-to-end confirmation attack. Be wise selecting your websites.
+
 ## what config is avaliable?
 
 ### config section of main.py:
@@ -38,7 +40,6 @@ randomUseragent = False #use another user agent?
 
 sitesfile = 'randomsites.txt' #list of websites (you can use generator.py to generate a list of random links inside a webpage or wepages you choose)
 
-#### Change the ammount of time the bot stays in a random time in seconds
 
 # Requirements: 
 
