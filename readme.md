@@ -42,10 +42,6 @@ breaktime_ = how much to wait before re-open the browser
 
 startups = times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
 
-randomUseragent = False #use another user agent?
-
-sitesfile = 'randomsites.txt' #list of websites (you can use generator.py to generate a list of random links inside a webpage or wepages you choose)
-
 
 # Requirements: 
 
