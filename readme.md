@@ -1,4 +1,3 @@
-## important updates on its way !
 
 # USAGE
 
@@ -6,32 +5,38 @@
 
 2) list those websites in the file "inputsites.txt" (the "/" at the end of the URL doesnt matter)
 
-3) execute generator.py from its folder
+3) execute: python generator.py
 
 4) there will be generated a file called "randomsites.txt" that has a list of all the links displayed inside the before listed sites.
 
-5) execute visitor.py
+5) open and configure main.py
+
+6) execute: python main.py
 
 ## what is navigator?
 navigator is a bot, that uses your browser to search all those sites one by one, before visiting another site.
 
 ## Why would you need this?
 
-Beacuse its cool to watch how your computer search random sites like there was a ghost
-
-To simulate browsing activity like a human, you could modify all the "randomsites.txt" list) and increase the time it stays in the site.
+To simulate browsing activity, in random or not random websites.
 
 ## what config is avaliable?
 
-### config section of visitor.py:
+### config section of main.py:
 
-#### you can change the used browser
+browser = 1-chrome, 2-firefox, 3-edge
 
-driver = webdriver.Chrome()
+staytime_ = random interval of time it stays in a website in seconds (from, to) 
 
-driver = webdriver.Edge()
+totaltime_ = time the browser is open before close
 
-driver = webdriver.Firefox()
+breaktime_ = how much to wait before re-open the browser
+
+startups = times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
+
+randomUseragent = False #use another user agent?
+
+sitesfile = 'randomsites.txt' #list of websites (you can use generator.py to generate a list of random links inside a webpage or wepages you choose)
 
 #### Change the ammount of time the bot stays in a random time in seconds
 
