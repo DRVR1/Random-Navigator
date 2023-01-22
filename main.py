@@ -13,13 +13,15 @@ import sys
 author: ianvid
 '''
 #config (random intervals (from, to) in the selected time unit)
+botsearch = True #TODO specify
 timeUnit = 2 # 1-seconds 2-minutes 3-hours
 staytimeT = (1,1) #time it stays in a website
 totaltimeT = (2,2) #time the browser is open before close
 breaktimeT = (1,1) #how much to wait before re-open the browser
 startups = 3 #times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
-wbrowser = 2 # 1-chrome 2-firefox 3-edge
+wbrowser = 4 # 1-chrome 2-firefox 3-edge 4-tor (tor must be running)
 fontcolor = '7'  #console font color (windows only)
+#TODO add macros
 '''
 windows OS options:
     0 = Black       8 = Gray
@@ -140,32 +142,71 @@ class Browser:
             self.driver = webdriver.Firefox()
         if(which==3):
             self.driver = webdriver.Edge()
+        if(which==4):
+            profile = webdriver.FirefoxProfile()
+            #profile.set_preference('network.proxy.type', 1) #TODO el proxy esta obsoleto, arreglar o quitar la funcion
+            opt = webdriver.FirefoxOptions()
+            opt.add_argument('network.proxy.type', 1)
+            opt.add_argument('network.proxy.socks', '127.0.0.1')
+            opt.add_argument('network.proxy.socks_port', 9050)
+            self.driver = webdriver.Firefox(profile,options=opt)
 
+                    
         self.currentstartup += 1
         return self.driver
+    
+    def close(self,driver:Union[webdriver.Chrome,webdriver.Firefox,webdriver.Edge]):
+        driver.close()
+        pass
 
-    def search(self,sites:list,controller:Controller):
+    def selectsite(self,sites:list):
         index = random.randint(0,len(sites)-1)
         site = sites[index]
-        self.searchedsites += 1
+        return site
+    
+    def getsite(self,site):
+        if(botsearch):
+            blockPrint()
+            self.driver.get(site) #TODO disable print
+            enablePrint()
+        if not (botsearch): #TODO ambiguo (pegar y buscar sitio)
+            pass
+
+    def rest(self,driver=None): #
+
+        self.close(driver) #TODO ambiguo
+
+        if self.currentstartup >= startups: return True #if reached the startups limit, break the loop by returning true
+        print(str(datetime.datetime.now()) + " - resting for " + str(printTime(controller.breaktime)) + ' '+controller.timeUnitString) 
+        time.sleep(controller.breaktime)
+
+        self.open(wbrowser) #TODO ambiguo
+
+        controller.resetTimer() #restarts the "stopwatch" to know when to exit the browser
+
+    def informAfter(self,site:str,controller:Controller):
         if(controller.startups != 0):
             print("startup: " + str(self.currentstartup) + '/' + str(controller.startups))
         print('visited sites in this startup: ' + str(self.searchedsites))
         print("loading: "+site)
-        blockPrint()
-        self.driver.get(site) #TODO disable print
-        enablePrint()
+        pass
+
+    def informpost(self):
         print(str(datetime.datetime.now()) + " - loaded, staying: " +str(printTime(controller.staytime)) + ' '+controller.timeUnitString)
-        if self.betterSleep(controller.staytime,controller):
-            return True #if betterSleep is interrupted by the max browsing time, returns true. otherwise returns false
-        else:
-            return False
+        pass
+
+    def search(self,sites:list,controller:Controller):
+        site = self.selectsite(sites)
+        self.searchedsites += 1
+        self.informAfter(site,controller)
+        self.getsite(site)
+        self.informpost()
+        return self.betterSleep(controller.staytime,controller)#if betterSleep is interrupted by the max browsing time, returns true. otherwise returns false
 
     def close(self):
         print("closing browser... this may take some seconds depending on the browser")
         self.driver.close()
 
-    #TODO time interruptions
     def betterSleep(self,seconds:float, controller:Controller)->bool:
         counter = 0
         while(counter < seconds):
@@ -192,8 +233,9 @@ f.close()
 
 controller = Controller(staytimeT,totaltimeT,breaktimeT,startups)
 controller.randomize()
-br = Browser(controller)
-br.open(wbrowser)
+if(botsearch):
+    br = Browser(controller)
+    br.open(wbrowser)
 
 print('starting')
 if(startups == 0):
@@ -205,12 +247,8 @@ else:
         os.system('cls')
         print("===========================================")
         controller.randomize() #randomize config time values
-        if br.search(sites,controller): #search a random site, if returns true, browsing time has run out and browser should be closed
-            br.close()
-            if br.currentstartup >= startups: break #if reached the startups limit, break the loop
-            print(str(datetime.datetime.now()) + " - resting for " + str(printTime(controller.breaktime)) + ' '+controller.timeUnitString) 
-            time.sleep(controller.breaktime)
-            br.open(wbrowser)
-            controller.resetTimer() #restarts the "stopwatch" to know when to exit the browser
+        if br.search(sites,controller): #search a random site, if returns True, browsing time has run out and browser should be closed
+            if (br.rest()): break #TODO generalizar
+
     
 print("reached " + str(startups) + " startups. closing...")

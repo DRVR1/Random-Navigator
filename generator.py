@@ -1,4 +1,4 @@
-import crawler
+from resources import crawler
 
 #config
 #sites to obtain links

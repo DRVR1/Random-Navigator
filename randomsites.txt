@@ -1,4 +1,3 @@
 https://www.wikimedia.org
-https://en.wikipedia.org/
-https://www.google.com.ar/
-https://maps.google.com.ar/
+https://en.wikipedia.org/wiki/HTTP_404
+http://github.com/reddit/reddit/wiki/API
