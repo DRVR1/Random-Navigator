@@ -39,4 +39,4 @@ pyautogui
 
 pynput
 
-<img>resources/screenshot</img>
+![captura](resources/screenshot.png)
