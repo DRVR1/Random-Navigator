@@ -39,4 +39,6 @@ pyautogui
 
 pynput
 
+## Image
+
 ![captura](resources/screenshot.png)
