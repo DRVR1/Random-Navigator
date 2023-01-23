@@ -10,7 +10,7 @@
 
 4) there will be generated a file called "randomsites.txt" that has a list of all the links displayed inside the before listed sites.
 
-5) open and configure main.py
+5) configure the time settings in resources/config.py
 
 6) execute: python main.py
 
@@ -23,21 +23,6 @@ To simulate browsing activity, in random or not random websites.
 
 When using a vpn, this adds a layer of privacy, getting difficult to hackers from using an end-to-end confirmation attack. Remember that you will need to obfuscate package sizes.
 
-## what config is avaliable?
-
-### config section of main.py:
-
-browser = 1-chrome, 2-firefox, 3-edge
-
-staytime_ = random interval of time it stays in a website in seconds (from, to) 
-
-totaltime_ = time the browser is open before close
-
-breaktime_ = how much to wait before re-open the browser
-
-startups = times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
-
-
 # Requirements: 
 
 bs4==0.0.1
@@ -48,4 +33,8 @@ selenium==4.7.2
 
 fake-useragent==1.1.1
 
+pyperclip
 
+pyautogui
+
+pynput
