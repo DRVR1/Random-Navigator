@@ -38,3 +38,5 @@ pyperclip
 pyautogui
 
 pynput
+
+<img>resources/screenshot</img>
