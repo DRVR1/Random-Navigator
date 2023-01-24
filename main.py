@@ -11,8 +11,6 @@ import sys
 from resources import humansearch
 from resources import config
 
-#lol
-
 if os.name == 'nt': #if OS is windows, change console font color
     os.system('color ' + config.fontcolor)
 
@@ -25,7 +23,8 @@ def clear():
 clear()
 print(config.title)
 
-print('Selenium uses your web driver to navigate, instad the human search uses macros to navigate.')
+print('Selenium uses your web driver to navigate. The human search, instead, uses macros to navigate.')
+print('important: if you are using human search and linux, please focus another window when saving the cursor position.')
 print('1. Selenium search\n2. Human search')
 op = int(input('input: '))
 if op == 1: config.botsearch=True
@@ -62,6 +61,8 @@ class Controller:
         self.staytimeT = staytimeT
         self.totaltimeT = totaltimeT
         self.breaktimeT = breaktimeT
+        
+        self.loadedsites = 0
 
         self.staytime = 0
         self.totaltime = 0
@@ -104,6 +105,7 @@ class Controller:
         print("staying in website for: " + str(printTime(self.staytime)) + ' '+self.timeUnitString)
         print("open browser max time: "+ str(printTime(self.totaltime)) + ' '+self.timeUnitString)
         print("resting time: "+ str(printTime(self.breaktime)) + ' '+self.timeUnitString)
+        print('loaded sites: ' + str(self.loadedsites))
 
     def getOptions(self)->int:
         '''
@@ -235,12 +237,15 @@ class Browser:
 sites = []
 f = open(sitesfile,'r')
 lines = f.readlines()
+ldsites = 0
 for line in lines:
+    ldsites += 1
     sites.append(line)
 f.close()
 
 
 controller = Controller(config.staytimeT,config.totaltimeT,config.breaktimeT,config.startups)
+controller.loadedsites = ldsites
 controller.randomize()
 
 br = Browser(controller)

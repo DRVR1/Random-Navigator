@@ -2,14 +2,14 @@ import pynput.keyboard as keyboard
 #config 
 
 #TIME (random intervals (from, to) in the selected time unit)
-timeUnit = 2 # 1-seconds 2-minutes 3-hours
-staytimeT = (0.4,3) #time it stays in a website
-totaltimeT = (3,30) #time the browser is open before close
-breaktimeT = (1,590) #how much to wait before re-open the browser
+timeUnit = 1 # 1-seconds 2-minutes 3-hours
+staytimeT = (3,7) #time it stays in a website
+totaltimeT = (10,30) #time the browser is open before close
+breaktimeT = (5,5) #how much to wait before re-open the browser
 
 #Browser config
 startups = 6 #times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
-wbrowser = 1 #1-chrome 2-firefox 3-edge  (only with botsearch=True) and the browser must be installed
+wbrowser = 2 #1-chrome 2-firefox 3-edge  (only with botsearch=True) and the browser must be installed
 
 #humansearch config
 positionGrabber = keyboard.Key.ctrl_l #this is the key you press to teach the macro where the buttons are

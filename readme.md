@@ -33,12 +33,14 @@ selenium==4.7.2
 
 fake-useragent==1.1.1
 
-pyperclip
+pyperclip==1.8.2
 
-pyautogui
+PyAutoGUI==0.9.53
 
-pynput
+pynput==1.7.6
 
-## Image
 
-![captura](resources/screenshot.png)
+## linux specific requirements
+sudo apt install xclip
+sudo apt install python3-tk
+sudo apt install python3-dev

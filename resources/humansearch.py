@@ -32,6 +32,9 @@ class human():
     def humanclick(self,where):
         pyautogui.click(where.x,where.y)
         pass
+    
+    def humanopenclick(self,where):
+        pyautogui.click(where.x,where.y)
 
     def humanDoubleclick(self,where):
         pyautogui.click(where.x,where.y)
@@ -46,7 +49,7 @@ class human():
 
     def openBrowser(self):
         print('human is opening browser...')
-        self.humanclick(self.pos_open)
+        self.humanopenclick(where)
         print('human opened the browser!')
         print('waiting ' + str(openingBrowserTime) + ' seconds before start...')
         time.sleep(openingBrowserTime)
