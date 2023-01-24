@@ -41,6 +41,9 @@ pynput==1.7.6
 
 
 ## linux specific requirements
+
 sudo apt install xclip
+
 sudo apt install python3-tk
+
 sudo apt install python3-dev
