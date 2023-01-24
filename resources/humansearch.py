@@ -68,6 +68,7 @@ class human():
         print('human is selecting navbar...')
         self.humanclick(self.pos_navbar)
         print('human selected navbar!')
+        time.sleep(0.3)
 
     def paste(self,what:str):
         print('human is pasting link')
@@ -87,9 +88,10 @@ class human():
                 self.waitForinput()
                 self.pos_open = pyautogui.position()
         if(what == 2):
-            print('Put your cursor in the X to close the browser and press: ' + str(positionGrabber))
-            self.waitForinput()
-            self.pos_close = pyautogui.position()
+            if startups != 0:
+                print('Put your cursor in the X to close the browser and press: ' + str(positionGrabber))
+                self.waitForinput()
+                self.pos_close = pyautogui.position()
         if(what == 3):
             print('Put your cursor your browser navigation bar and press: ' + str(positionGrabber))
             self.waitForinput()

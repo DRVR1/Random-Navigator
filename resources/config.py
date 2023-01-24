@@ -2,8 +2,8 @@ import pynput.keyboard as keyboard
 #config 
 
 #TIME (random intervals (from, to) in the selected time unit)
-timeUnit = 1 # 1-seconds 2-minutes 3-hours
-staytimeT = (5,5) #time it stays in a website
+timeUnit = 2 # 1-seconds 2-minutes 3-hours
+staytimeT = (0.4,2) #time it stays in a website
 totaltimeT = (1,1) #time the browser is open before close
 breaktimeT = (1,30) #how much to wait before re-open the browser
 
