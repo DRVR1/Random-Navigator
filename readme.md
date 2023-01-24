@@ -39,6 +39,7 @@ PyAutoGUI==0.9.53
 
 pynput==1.7.6
 
+# tested in windows 11 and ubuntu 22.04
 
 ## linux specific requirements
 
