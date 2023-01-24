@@ -7,10 +7,11 @@ import random
 import fake_useragent
 import datetime
 import os
-
 import sys
 from resources import humansearch
 from resources import config
+
+#lol
 
 if os.name == 'nt': #if OS is windows, change console font color
     os.system('color ' + config.fontcolor)
