@@ -226,8 +226,9 @@ class Browser:
             currentTime = timer()
             elapsedTime = currentTime - controller.startTime
             print('Website time: ' + str(printTime(counter)) + ' '+controller.timeUnitString + ' --- Open browser time: ' + str(printTime(elapsedTime)) + ' '+controller.timeUnitString, end='\r')
-            if(elapsedTime > controller.totaltime):
-                return True 
+            if(config.startups != 0):
+                if(elapsedTime > controller.totaltime):
+                    return True 
             time.sleep(1)
         return False
 
@@ -257,6 +258,7 @@ if(config.startups == 0):
     while(True):
         br.search(sites,controller)
         controller.randomize()
+        
 else:
     while(True):
         clear()
