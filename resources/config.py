@@ -3,9 +3,9 @@ import pynput.keyboard as keyboard
 
 #TIME (random intervals (from, to) in the selected time unit)
 timeUnit = 1 # 1-seconds 2-minutes 3-hours
-staytimeT = (3,7) #time it stays in a website
-totaltimeT = (10,30) #time the browser is open before close
-breaktimeT = (5,5) #how much to wait before re-open the browser
+staytimeT = (20,20) #time it stays in a website
+totaltimeT = (10,10) #time the browser is open before close
+breaktimeT = (3,3) #how much to wait before re-open the browser
 
 #Browser config
 startups = 6 #times the browser will close and re-open again to simulate a break from browsing (if 0, it never closes)
@@ -34,14 +34,24 @@ windows OS options:
 
 #title
 title = '''
-███╗   ██╗ █████╗ ██╗   ██╗██╗ ██████╗  █████╗ ████████╗ ██████╗ ██████╗
-████╗  ██║██╔══██╗██║   ██║██║██╔════╝ ██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
-██╔██╗ ██║███████║██║   ██║██║██║  ███╗███████║   ██║   ██║   ██║██████╔╝
-██║╚██╗██║██╔══██║╚██╗ ██╔╝██║██║   ██║██╔══██║   ██║   ██║   ██║██╔══██╗
-██║ ╚████║██║  ██║ ╚████╔╝ ██║╚██████╔╝██║  ██║   ██║   ╚██████╔╝██║  ██║
-╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+                                                                                 ^
+                                                                                 I\\
+                                                                                 I \\       ^
+                                                                                 I  \\
+                                                                            ^    I*--\\    ^  ^
+███╗   ██╗ █████╗ ██╗   ██╗██╗ ██████╗  █████╗ ████████╗ ██████╗ ██████╗         I    \\
+████╗  ██║██╔══██╗██║   ██║██║██╔════╝ ██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗        I     \\
+██╔██╗ ██║███████║██║   ██║██║██║  ███╗███████║   ██║   ██║   ██║██████╔╝        I______\\
+██║╚██╗██║██╔══██║╚██╗ ██╔╝██║██║   ██║██╔══██║   ██║   ██║   ██║██╔══██╗   _____I__O______
+██║ ╚████║██║  ██║ ╚████╔╝ ██║╚██████╔╝██║  ██║   ██║   ╚██████╔╝██║  ██║    \     ( )     b
+╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝  ^^^^^^^^^^^^^^^^^^^^
 ┌───────────────────────────┐
 │ author: DRVR1             │
 │ version: 0.1              │
 └───────────────────────────┘
 '''
+
+# Only for linux users: due to pyautogui cant detect cursor position in the Desktop/launcher, the browser must
+# be opened from bash (os.system('comand'))
+
+openBrowserCommand = '~/Downloads/tor-browser-linux64-12.0.2_ALL/tor-browser/Browser/start-tor-browser' # Your bash command that opens your browser.

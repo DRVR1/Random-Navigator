@@ -3,6 +3,8 @@ import pyautogui
 import pynput.keyboard as keyboard
 from resources.config import *
 import time
+import subprocess
+import os
 
 
 stopwhile = False
@@ -35,6 +37,8 @@ class human():
     
     def humanopenclick(self,where):
         pyautogui.click(where.x,where.y)
+        time.sleep(0.3)
+        pyautogui.click(where.x,where.y)
 
     def humanDoubleclick(self,where):
         pyautogui.click(where.x,where.y)
@@ -47,9 +51,15 @@ class human():
         self.humanclick(self.pos_close)
         print('human closed the browser!')
 
-    def openBrowser(self):
+    def openBrowser(self):#TODO issue: linux doesnt register gnome mouse position. browser must be opened from shell
         print('human is opening browser...')
-        self.humanopenclick(where)
+        
+        if os.name == 'nt':
+            self.humanopenclick(self.pos_open)
+        else:
+            proc = subprocess.Popen([openBrowserCommand],shell=True)
+            os.system('exit')
+            
         print('human opened the browser!')
         print('waiting ' + str(openingBrowserTime) + ' seconds before start...')
         time.sleep(openingBrowserTime)
@@ -72,9 +82,10 @@ class human():
 
     def learn(self,what): #1 close, 2 open, 3 navbar (cambia el dato self a cambiar, y la string impresa)
         if(what == 1):
-            print('Put your cursor in the browser app (taskbar - launcher bar) (it must open with one click) and press: ' + str(positionGrabber))
-            self.waitForinput()
-            self.pos_open = pyautogui.position()
+            if os.name == 'nt':
+                print('Put your cursor in the browser app (taskbar - launcher bar) (it must open with one click) and press: ' + str(positionGrabber))
+                self.waitForinput()
+                self.pos_open = pyautogui.position()
         if(what == 2):
             print('Put your cursor in the X to close the browser and press: ' + str(positionGrabber))
             self.waitForinput()

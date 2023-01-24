@@ -24,7 +24,7 @@ clear()
 print(config.title)
 
 print('Selenium uses your web driver to navigate. The human search, instead, uses macros to navigate.')
-print('important: if you are using human search and linux, please focus another window when saving the cursor position.')
+print('important: if you are using human search and linux, please focus the browser window when saving the cursor position.')
 print('1. Selenium search\n2. Human search')
 op = int(input('input: '))
 if op == 1: config.botsearch=True
