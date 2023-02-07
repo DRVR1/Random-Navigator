@@ -48,3 +48,6 @@ sudo apt install xclip
 sudo apt install python3-tk
 
 sudo apt install python3-dev
+
+# CLI
+![cli](https://i.imgur.com/V1liKkf.png)
