@@ -6,13 +6,13 @@
 
 3) execute: python generator.py
 
-4) there will be generated a file called "randomsites.txt" that has a list of all the links displayed inside the before listed sites.
+4) the crawler will generate a file called "randomsites.txt" that has a list of all the links displayed inside the listed sites.
 
 (alternatively, you can just type your links into randomsites.txt if you want to omit scrapping)
 
-5) configure the time settings in resources/config.py
+5) configure the timing settings in resources/config.py
 
-6) execute: python main.py
+6) execute python main.py
 
 ## what is navigator?
 navigator is a bot, that uses your browser to search all those sites one by one, before visiting another site.
