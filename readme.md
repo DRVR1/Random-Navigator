@@ -21,8 +21,6 @@ navigator is a bot, that uses your browser to search all those sites one by one,
 
 To simulate browsing activity, in random or not random websites.
 
-When using a vpn, this adds a layer of privacy, getting difficult to hackers from using an end-to-end confirmation attack. Remember that you will need to obfuscate package sizes.
-
 # Requirements: 
 
 bs4==0.0.1
