@@ -27,7 +27,7 @@ When using a vpn, this adds a layer of privacy, getting difficult to hackers fro
 
 bs4==0.0.1
 
-requests==2.28.2
+requests
 
 selenium==4.7.2
 
